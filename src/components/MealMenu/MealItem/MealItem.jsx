@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import styles from './MealItem.module.css';
+import MealItemAddCart from './MealItemAddCart';
 
-function MealItem({ name, description, price }) {
+function MealItem({ id, name, description, price }) {
     const prices = `$${price.toFixed(2)}`;
     return (
         <li className={styles.meal}>
@@ -10,7 +11,9 @@ function MealItem({ name, description, price }) {
                 <div className={styles.description}>{description}</div>
                 <div className={styles.price}>{prices}</div>
             </div>
-            <div></div>
+            <div>
+                <MealItemAddCart id={id} />
+            </div>
         </li>
     )
 }
