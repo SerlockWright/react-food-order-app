@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import CartIcon from '../../Cart/CartIcon';
 import styles from './HeaderCartButton.module.css'
 
-function HeaderCartButton() {
+function HeaderCartButton({ onClick }) {
     return (
-        <button className={styles.button}>
+        <button className={styles.button} onClick={onClick}>
             <span className={styles.icon}>
                 <CartIcon />
             </span>

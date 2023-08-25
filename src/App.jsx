@@ -4,10 +4,23 @@ import Meal from './components/MealMenu/Meal'
 import Cart from './components/Cart/Cart'
 
 function App() {
+  //manage state
+  const [showCart, setShowCart] = React.useState(false);
+
+  //handle cart
+  const handleShowCart = () => {
+    setShowCart(true);
+  }
+
+  const handleCloseCart = () => {
+    setShowCart(false);
+  }
+
+
   return (
     <React.Fragment>
-      <Cart />
-      <Header />
+      {showCart && <Cart onClose={handleCloseCart} />}
+      <Header onShowCart={handleShowCart} />
       <main>
         <Meal />
       </main>
