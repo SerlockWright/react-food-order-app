@@ -2,29 +2,31 @@ import React from 'react'
 import Header from './components/Layout/Header/Header'
 import Meal from './components/MealMenu/Meal'
 import Cart from './components/Cart/Cart'
+import CartProvider from './context/CartProvider';
 
 function App() {
-  //manage state
+  //--------manage state-------//
   const [showCart, setShowCart] = React.useState(false);
+  //-------------/------------//
 
-  //handle cart
+  //--------handle cart--------//
   const handleShowCart = () => {
     setShowCart(true);
   }
-
   const handleCloseCart = () => {
     setShowCart(false);
   }
+  //-------------/-------------//
 
 
   return (
-    <React.Fragment>
+    <CartProvider>
       {showCart && <Cart onClose={handleCloseCart} />}
       <Header onShowCart={handleShowCart} />
       <main>
         <Meal />
       </main>
-    </React.Fragment>
+    </CartProvider>
   )
 }
 
