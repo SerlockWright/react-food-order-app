@@ -18,7 +18,6 @@ function App() {
   }
   //-------------/-------------//
 
-
   return (
     <CartProvider>
       {showCart && <Cart onClose={handleCloseCart} />}
